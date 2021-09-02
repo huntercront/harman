@@ -43,13 +43,13 @@ Loader.prototype = {
 
 var p = new Loader();
 p.require([
-        "/js/scroll.js"
+        "./js/scroll.js"
     ],
     function() {});
 
 var l = new Loader();
 l.require([
-        "/js/lazy-load.js"
+        "./js/lazy-load.js"
     ],
     function() {});
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var s = new Loader();
     s.require([
-            "/js/slider.js"
+            "./js/slider.js"
         ],
         function() {
 
