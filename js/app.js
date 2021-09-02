@@ -83,47 +83,74 @@ if (mMenu) {
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    var s = new Loader();
-    s.require([
-            "./js/slider.js"
-        ],
-        function() {
+    if (document.querySelector('.hero-slides') || document.querySelector('.s-slides')) {
+        var s = new Loader();
+        s.require([
+                "./js/slider.js"
+            ],
+            function() {
 
-            let heroSlider = new Siema({
-                selector: '.hero-slides',
-                duration: 350,
-                easing: 'ease',
-                startIndex: 0,
-                draggable: true,
-                multipleDrag: true,
-                threshold: 90,
-                loop: false,
-                rtl: false,
-                perPage: 1,
-                onInit: currentSlide,
-                onChange: currentText,
+                if (document.querySelector('.hero-slides')) {
+                    let heroSlider = new Siema({
+                        selector: '.hero-slides',
+                        duration: 350,
+                        easing: 'ease',
+                        startIndex: 0,
+                        draggable: true,
+                        multipleDrag: true,
+                        threshold: 90,
+                        loop: false,
+                        rtl: false,
+                        perPage: 1,
+                        onInit: currentSlide,
+                        onChange: currentText,
+                    });
+
+                    function currentSlide() {
+                        document.querySelector('.slide-descr').textContent = document.querySelectorAll('.slide')[this.currentSlide].getAttribute('data-text');
+                        let hideSlides = document.querySelectorAll('.hide-on-load');
+                        hideSlides.forEach(function(hideSlide) {
+                            hideSlide.classList.remove('hide-on-load');
+                        });
+                    }
+
+                    function currentText() {
+                        document.querySelector('.slide-descr').textContent = document.querySelectorAll('.slide')[this.currentSlide].getAttribute('data-text');
+                    }
+                    let prev = document.querySelector('.hero .prev');
+                    let next = document.querySelector('.hero .next');
+                    prev.addEventListener('click', () => heroSlider.prev());
+                    next.addEventListener('click', () => heroSlider.next());
+                }
+                if (document.querySelector('.s-slides')) {
+                    let storySlider = new Siema({
+                        selector: '.s-slides',
+                        duration: 350,
+                        easing: 'ease',
+                        startIndex: 0,
+                        draggable: true,
+                        multipleDrag: true,
+                        threshold: 90,
+                        loop: false,
+                        rtl: false,
+                        perPage: 1,
+                        onInit: storyInit
+                    });
+
+                    function storyInit() {
+                        let hideSlides = document.querySelectorAll('.hide-on-load')
+                        hideSlides.forEach(function(hideSlide) {
+                            hideSlide.classList.remove('hide-on-load');
+                        });
+                    }
+                    let prev = document.querySelector('.stories-slider .prev');
+                    let next = document.querySelector('.stories-slider .next');
+                    prev.addEventListener('click', () => storySlider.prev());
+                    next.addEventListener('click', () => storySlider.next());
+                }
+
             });
-
-            function currentSlide() {
-                document.querySelector('.slide-descr').textContent = document.querySelectorAll('.slide')[this.currentSlide].getAttribute('data-text');
-                let hideSlides = document.querySelectorAll('.hide-on-load')
-                hideSlides.forEach(function(hideSlide) {
-                    hideSlide.classList.remove('hide-on-load')
-                })
-            }
-
-            function currentText() {
-                document.querySelector('.slide-descr').textContent = document.querySelectorAll('.slide')[this.currentSlide].getAttribute('data-text');
-            }
-            let prev = document.querySelector('.hero .prev');
-            let next = document.querySelector('.hero .next');
-
-            prev.addEventListener('click', () => heroSlider.prev());
-            next.addEventListener('click', () => heroSlider.next());
-
-
-        });
-
+    }
 
 
 
