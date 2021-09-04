@@ -554,6 +554,10 @@ section.mt-up {
     margin-top: 8rem;
 }
 
+section.mt-low {
+    margin-top: 3rem;
+}
+
 .title-l,
 h1.title-l {
     font-weight: 700;
@@ -684,7 +688,7 @@ h1.title-l {
 .main-btn {
     background: var(--main);
     color: var(--white);
-    padding: 0.85rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -1081,7 +1085,7 @@ h1.title-l {
 
 .text-line::after {
     content: '';
-    border-bottom: 1px solid #999999;
+    border-bottom: 1px solid #dadada;
     width: calc(100% - 1rem);
     margin-left: 1rem;
 }
@@ -1433,8 +1437,8 @@ h1.title-l {
 .descr a {
     border-bottom: 1px solid;
     word-wrap: break-word;
-    padding: 0.25rem 0.25rem 0rem 0.25rem;
-    margin: -0.25rem;
+    padding: 0.125rem 0.125rem 0rem 0.125rem;
+    margin: -0.125rem -0.125rem 0rem -0.125rem;
     transition: 150ms ease-in;
     transition-property: background;
     will-change: background;
@@ -1443,3 +1447,33 @@ h1.title-l {
 .descr a:hover {
     background: var(--main-light);
 }
+
+.centured-cta {
+    margin-top: 2rem;
+}
+
+
+/* digital */
+
+.digital .icon-l {
+    margin-bottom: 0.875rem;
+}
+
+.digital-card {
+    max-width: 18rem;
+}
+
+
+/* offer */
+
+.icon-descr {
+    margin-bottom: 0.75rem;
+}
+
+.icon-descr p {
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: -0.075rem;
+}
+
+.icon-descr {}
