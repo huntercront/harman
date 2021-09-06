@@ -421,6 +421,12 @@ html {
     justify-content: flex-start;
 }
 
+.s-c {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .c-e {
     display: flex;
     align-items: center;
@@ -1309,6 +1315,14 @@ h1.title-l {
     padding-bottom: 78%;
 }
 
+.jumb-small .jumb-img::before {
+    padding-bottom: 44%;
+}
+
+.jumb-small .jumb-img img {
+    object-position: center top;
+}
+
 .jumb-img img {
     position: absolute;
     top: 0;
@@ -1316,9 +1330,6 @@ h1.title-l {
     object-fit: cover;
     height: 100%;
     object-position: right top;
-    transition: 200ms linear;
-    transition-property: transform;
-    will-change: transform;
 }
 
 .jumb-descr {
@@ -1449,7 +1460,8 @@ h1.title-l {
     margin-bottom: 0.875rem;
 }
 
-.descr a {
+.descr a,
+section a {
     border-bottom: 1px solid;
     word-wrap: break-word;
     padding: 0.125rem 0.125rem 0rem 0.125rem;
@@ -1459,7 +1471,8 @@ h1.title-l {
     will-change: background;
 }
 
-.descr a:hover {
+.descr a:hover,
+section a:hover {
     background: var(--main-light);
 }
 
@@ -1488,7 +1501,6 @@ h1.title-l {
 .icon-descr p {
     font-weight: 600;
     margin-bottom: 0;
-    margin-top: -0.075rem;
 }
 
 
@@ -1522,4 +1534,75 @@ h1.title-l {
 .multiple-loading .solution-card {
     flex: 0 0 33.33%;
     max-width: 33.33%;
+}
+
+.line {
+    flex: 1 1 auto;
+    width: auto;
+    margin-left: 1rem;
+    border-bottom: 1px solid #dadada;
+    margin-top: 0.75rem;
+}
+
+.shop-card p.descr {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.shop-card .descr-sm {
+    margin-bottom: 0.125rem;
+}
+
+.shop-info {
+    margin-left: 1rem;
+}
+
+.shop-logo {
+    border: 1px solid #E1E1E1;
+    border-radius: 0.5rem;
+    margin: 0;
+}
+
+.shop-logo:hover {
+    border: 1px solid var(--main-light);
+}
+
+.shop-logo img {
+    max-width: 12rem;
+    mix-blend-mode: darken;
+}
+
+.shop-card .shop-single {
+    margin: 0;
+}
+
+.shop-single a.shop-logo {
+    height: 100%;
+    width: 100%;
+}
+
+.shop-single {
+    flex: 0 0 20%;
+    max-width: 20%;
+    width: 100%;
+    min-height: 6.5rem;
+    padding: 0 10px;
+}
+
+.shop-single {
+    margin-bottom: 20px;
+}
+
+.shops-logo {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.shops-line+.shops-line {
+    margin-top: 4rem;
+}
+
+.icon-descr+.shops-logo {
+    margin-top: 1.5rem;
 }
