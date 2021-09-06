@@ -83,7 +83,7 @@ if (mMenu) {
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    if (document.querySelector('.hero-slides') || document.querySelector('.s-slides')) {
+    if (document.querySelector('.hero-slides') || document.querySelector('.s-slides') || document.querySelector('.solution-slider')) {
         var s = new Loader();
         s.require([
                 "./js/slider.js"
@@ -145,6 +145,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     }
                     let prev = document.querySelector('.stories-slider .prev');
                     let next = document.querySelector('.stories-slider .next');
+                    prev.addEventListener('click', () => storySlider.prev());
+                    next.addEventListener('click', () => storySlider.next());
+                }
+
+                if (document.querySelector('.solution-slider')) {
+                    let storySlider = new Siema({
+                        selector: '.solution-slider',
+                        duration: 350,
+                        easing: 'ease',
+                        startIndex: 0,
+                        draggable: true,
+                        multipleDrag: true,
+                        threshold: 90,
+                        loop: false,
+                        rtl: false,
+                        perPage: 3,
+                        onInit: storyInit
+                    });
+
+                    function storyInit() {
+                        let hideSlides = document.querySelectorAll('.hide-on-load')
+                        hideSlides.forEach(function(hideSlide) {
+                            hideSlide.classList.remove('hide-on-load');
+                        });
+                        document.querySelector('.multiple-loading').classList.remove('multiple-loading')
+                    }
+                    let prev = document.querySelector('.has-slider .prev');
+                    let next = document.querySelector('.has-slider .next');
                     prev.addEventListener('click', () => storySlider.prev());
                     next.addEventListener('click', () => storySlider.next());
                 }

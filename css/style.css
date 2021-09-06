@@ -558,6 +558,14 @@ section.mt-low {
     margin-top: 3rem;
 }
 
+section.mt-small {
+    margin-top: 0.5rem;
+}
+
+section.mb-up {
+    margin-bottom: 8rem;
+}
+
 .title-l,
 h1.title-l {
     font-weight: 700;
@@ -1025,7 +1033,9 @@ h1.title-l {
 
 .blog-card .blog-meta,
 .blog-card .blog-title,
-.blog-card .descr {
+.blog-card .descr,
+.solution-card .blog-title,
+.solution-card .descr {
     padding: 0 1rem;
 }
 
@@ -1066,7 +1076,8 @@ h1.title-l {
     transform: scale(1.05);
 }
 
-.has-link {
+.has-link,
+.has-slider {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -1407,7 +1418,8 @@ h1.title-l {
     max-width: 38.25rem;
 }
 
-.stories-slider .slide-button {
+.stories-slider .slide-button,
+.title-buttons .slide-button {
     background: var(--main-light);
 }
 
@@ -1415,15 +1427,18 @@ h1.title-l {
     bottom: 0;
 }
 
-.stories-slider .slides-buttons svg {
+.stories-slider .slides-buttons svg,
+.title-buttons .slide-button svg {
     stroke: var(--main);
 }
 
-.stories-slider .slide-button:hover {
+.stories-slider .slide-button:hover,
+.title-buttons .slide-button:hover {
     background: var(--main);
 }
 
-.stories-slider .slide-button:hover svg {
+.stories-slider .slide-button:hover svg,
+.title-buttons .slide-button:hover svg {
     stroke: var(--white);
 }
 
@@ -1476,4 +1491,35 @@ h1.title-l {
     margin-top: -0.075rem;
 }
 
-.icon-descr {}
+
+/* solution */
+
+.solution .blog-img:before {
+    padding-bottom: 100%;
+}
+
+.solution .blog-img {
+    margin-bottom: 1.5rem;
+}
+
+.solution .blog-card:hover .blog-img img {
+    transform: scale(1);
+}
+
+.solution-slider {
+    margin: 0 -10px;
+}
+
+.solution-card {
+    padding: 0 10px;
+}
+
+.multiple-loading {
+    display: flex;
+    align-items: flex-start;
+}
+
+.multiple-loading .solution-card {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
