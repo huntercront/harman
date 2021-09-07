@@ -595,6 +595,14 @@ h1.title-l {
     margin-bottom: 0.65rem;
 }
 
+.title-sm {
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--black);
+    font-size: 1srem;
+    margin-bottom: 0.65rem;
+}
+
 .content-icon {
     background: var(--main-light);
     width: 2.5rem;
@@ -655,6 +663,7 @@ h1.title-l {
     transition: 150ms ease-in;
     transition-property: background;
     will-change: background;
+    border: none;
 }
 
 .link-all {
@@ -700,6 +709,10 @@ h1.title-l {
     will-change: opacity, transform;
 }
 
+.read-more:hover {
+    background: unset;
+}
+
 .read-more:hover .icon::before {
     opacity: 1;
     transform: translate(-47%, -50%) scale(1);
@@ -722,6 +735,7 @@ h1.title-l {
 .main-btn:hover {
     transform: translate(0, -0.125rem);
     box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    background: var(--main);
 }
 
 .sec-btn {
@@ -1642,4 +1656,23 @@ section a:hover {
 .buy-c-card {
     border: 2px solid #F3F3F3;
     border-radius: 0.5rem;
+}
+
+
+/* do */
+
+.do-card .title-sm {
+    margin-top: 1rem;
+}
+
+.do-card {
+    border: 2px solid #F3F3F3;
+    padding: 1rem 1.25rem 0.75rem 1.25rem;
+    height: 8.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.do-cards-line+.title-line {
+    margin-top: 1.75rem;
 }
