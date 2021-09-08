@@ -934,6 +934,57 @@ h1.title-l {
 }
 
 
+/* m-nav */
+
+.m-menu {
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .m-menu {
+        display: flex;
+    }
+    svg.ham {
+        cursor: pointer;
+        transition: transform .4s;
+        will-change: transform;
+        user-select: none
+    }
+    .hamRotate.active {
+        transform: rotate(45deg)
+    }
+    .hamRotate180.active {
+        transform: rotate(180deg)
+    }
+    .line {
+        fill: none;
+        transition: stroke-dasharray .4s, stroke-dashoffset .4s;
+        stroke: var(--gray);
+        stroke-width: 5.5;
+        stroke-linecap: round
+    }
+    .ham1 .top {
+        stroke-dasharray: 40 139
+    }
+    .ham1 .bottom {
+        stroke-dasharray: 40 180
+    }
+    .ham1.active .top {
+        stroke-dashoffset: -98px
+    }
+    .ham1.active .bottom {
+        stroke-dashoffset: -138px
+    }
+    .mobile-icon {
+        width: 3rem;
+        border-radius: .25rem;
+        padding: 0;
+        border: none;
+        background: 0 0
+    }
+}
+
+
 /* hero-slider */
 
 .hero .main-btn {
@@ -1176,8 +1227,19 @@ h1.title-l {
     line-height: 1;
 }
 
+.mid-number {
+    letter-spacing: -0.05em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.25rem;
+    line-height: 1;
+}
+
 .stast p {
     margin: 0.75rem 0 0 0;
+}
+
+.stast+.stast {
+    margin-top: 2.5rem;
 }
 
 .pre-number {
@@ -1675,4 +1737,33 @@ section a:hover {
 
 .do-cards-line+.title-line {
     margin-top: 1.75rem;
+}
+
+
+/* map-russia */
+
+.map-russia.banner .title-line {
+    margin-bottom: 4rem;
+}
+
+.multy-stats {
+    margin-top: 0.65rem;
+}
+
+.multy-stats .stast+.stast {
+    margin-top: 1.5rem;
+}
+
+.multy-stats .stast p {
+    margin-top: 0rem;
+}
+
+.map-russia {
+    overflow: hidden;
+}
+
+.map-russia .bg-map {
+    left: auto;
+    right: 0;
+    transform: translate(5%, -50%);
 }
