@@ -61,27 +61,79 @@ let mMenu = document.querySelector('.mobile-icon')
 let menu = document.querySelector('.header-info')
 let overlay = document.querySelector('.header-overley')
 
-if (mMenu) {
+// if (mMenu) {
 
 
-    mMenu.addEventListener('click', function(e) {
+//     mMenu.addEventListener('click', function(e) {
 
-        this.querySelector('.ham').classList.toggle('active')
-        menu.classList.toggle('visible')
-        overlay.classList.toggle('overley-active')
+//         this.querySelector('.ham').classList.toggle('active')
+//         menu.classList.toggle('visible')
+//         overlay.classList.toggle('overley-active')
 
 
-    })
-    overlay.addEventListener('click', function(e) {
-        if (this.classList.contains('overley-active') && (mMenu.querySelector('.ham').classList.contains('active'))) {
-            menu.classList.toggle('visible')
-            this.classList.toggle('overley-active')
-            mMenu.querySelector('.ham').classList.toggle('active')
-        }
-    })
-}
+//     })
+//     overlay.addEventListener('click', function(e) {
+//         if (this.classList.contains('overley-active') && (mMenu.querySelector('.ham').classList.contains('active'))) {
+//             menu.classList.toggle('visible')
+//             this.classList.toggle('overley-active')
+//             mMenu.querySelector('.ham').classList.toggle('active')
+//         }
+//     })
+// }
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
+    // for form
+    // errors show
+    let inputs = document.querySelectorAll('.large-input input')
+    inputs.forEach(function(input) {
+            input.addEventListener('input', function() {
+                if (input.value == "123") {
+                    input.closest('.large-input').classList.add('error')
+                    slideDown(input.closest('.large-input').querySelector('.error-text'), 150)
+                }
+            })
+
+            input.addEventListener('focus', function() {
+                if (input.closest('.large-input').classList.contains('error')) {
+                    input.closest('.large-input').classList.remove('error')
+                    slideUp(input.closest('.large-input').querySelector('.error-text'), 150)
+                }
+            })
+        })
+        // claer value
+    let clearValues = document.querySelectorAll('.remove-value')
+    clearValues.forEach(function(clearValue) {
+        clearValue.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let formEl = clearValue.closest('.large-input').querySelector('input')
+            if (formEl.value != '') {
+                formEl.value = ''
+            }
+        })
+    })
+
+
+    // for-docs
+    let docLists = document.querySelectorAll('.dl-group .btn')
+    if (docLists) {
+        docLists.forEach(function(docList) {
+            docList.addEventListener('click', function(e) {
+                let curentPanel = docList.closest('.dl-group')
+                slideToggle(curentPanel.querySelector('ul'), 150)
+                if (curentPanel.classList.contains('active-list')) {
+                    setTimeout(function() {
+                        curentPanel.classList.toggle('active-list')
+                    }, 100)
+                } else {
+                    curentPanel.classList.toggle('active-list')
+                }
+
+
+            })
+        })
+    }
 
     if (document.querySelector('.hero-slides') || document.querySelector('.s-slides') || document.querySelector('.solution-slider')) {
         var s = new Loader();
